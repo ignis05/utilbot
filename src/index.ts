@@ -11,7 +11,7 @@ if (!process.env.DISCORD_TOKEN) throw 'No token'
 const COMMANDS = new Collection<string, Command>()
 client.once(Events.ClientReady, () => {
 	const commandsPath = path.join(__dirname, 'commands')
-	const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith('.ts'))
+	const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith(/\.[tj]s/))
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPath, file)
 		const command = require(filePath)
