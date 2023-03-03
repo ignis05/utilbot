@@ -1,0 +1,22 @@
+{
+	"name": "utilbot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "cd src && ts-node ./index.ts",
+		"build": "tsc",
+		"deploy": "tsc && cd dist && pm2 restart ecosystem.config.js"
+	},
+	"author": "ignis05",
+	"license": "ISC",
+	"devDependencies": {
+		"ts-node": "^10.9.1",
+		"typescript": "^4.8.4"
+	},
+	"dependencies": {
+		"@types/node": "^18.7.23",
+		"discord.js": "^14.7.1",
+		"dotenv": "^16.0.3"
+	}
+}
