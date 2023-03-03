@@ -1,5 +1,7 @@
 import { Client, GatewayIntentBits, User } from 'discord.js'
+
 require('dotenv').config()
+if (!process.env.DISCORD_TOKEN) throw 'No token'
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent] })
 
